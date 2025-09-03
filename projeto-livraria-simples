@@ -1,0 +1,55 @@
+CREATE TABLE Livros (
+    id_livro INT PRIMARY KEY AUTO_INCREMENT,
+    Titulo VARCHAR(150) NOT NULL,
+    Ano_publicacao INT,
+    preco DECIMAL(10, 2) NOT NULL,
+    Disponivel BOOLEAN DEFAULT TRUE
+);
+
+INSERT INTO Livros (Titulo, Ano_publicacao, preco, disponivel) VALUES
+	('O Hobbit', 1937, 35.90, true),
+	('A Sociedade do Anel', 1954, 45.50, true),
+	('Harry Potter e a Pedra Filosofal', 1997, 39.90, TRUE),
+	('A Bússola de Ouro', 1995, 29.99, FALSE),
+	('O Nome do Vento', 2007, 52.30, TRUE);
+    
+CREATE TABLE Autores (
+  	id_autor INT PRIMARY KEY AUTO_INCREMENT,
+  	Nome VARCHAR(100) NOT NULL,
+  	data_nascimento DATE,
+  	nacionalidade VARCHAR(100),
+  	email VARCHAR(100) UNIQUE NOT NULL
+); 
+
+INSERT INTO Autores (Nome, data_nascimento, nacionalidade, email) VALUES
+	('J.R.R. Tolkien', '1892-01-03', 'Britânico', 'info@tolkienestate.com'),
+	('J.K. Rowling', '1965-07-31', 'Britânica', 'info@jkrowling.com'),
+	('Philip Pullman', '1946-10-19', 'Britânico', 'philip@author.net'),
+	('Patrick Rothfuss', '1973-06-06', 'Americano', 'contact@patrickrothfuss.com');
+    
+INSERT INTO Livros (Titulo, preco, disponivel) VALUES
+	('Crepúsculo', 32.50, TRUE),
+    ('Lua Nova', 34.90, TRUE),
+	('Eclipse', 36.50, TRUE);
+    
+INSERT INTO Autores (Nome, data_nascimento, email) VALUES
+   	('Stephenie Meyer', '1973-12-24', 'stephenie@example.com');
+    
+UPDATE Livros
+SET
+	Ano_publicacao = 2002,
+    preco = 79.90
+WHERE
+	Titulo = 'Crepúsculo';
+
+SELECT Titulo, preco
+FROM Livros
+WHERE preco > 50.00;
+
+SELECT Nome, data_nascimento
+FROM Autores
+WHERE data_nascimento < '1980-01-01';
+
+SELECT Titulo, Ano_publicacao
+FROM Livros
+WHERE disponivel = TRUE;
