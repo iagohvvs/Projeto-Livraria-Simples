@@ -10,6 +10,5 @@ Este projeto é um modelo de banco de dados simples para uma livraria, desenvolv
 ## 📜 Licença
 Este projeto está licenciado sob a licença MIT.
 
-
-![Status](https://img.shields.io/badge/status-completo-brightgreen)
 ![SQL](https://img.shields.io/badge/Linguagem-SQL-blue)
+![Status](https://img.shields.io/badge/status-completo-brightgreen)
